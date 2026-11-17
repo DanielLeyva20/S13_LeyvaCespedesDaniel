@@ -1,0 +1,31 @@
+<section class="page">
+  <h2 class="page__title">Libros</h2>
+  <div class="card card--table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Categoría</th>
+          <th>Año</th>
+          <th>Disponibilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (book of books; track book.id) {
+          <tr>
+            <td><strong>{{ book.title }}</strong></td>
+            <td>{{ book.authorName }}</td>
+            <td>{{ book.categoryName }}</td>
+            <td>{{ book.year }}</td>
+            <td>
+              <span class="badge" [class.badge--ok]="book.availableCopies > 0" [class.badge--danger]="book.availableCopies === 0">
+                {{ book.availableCopies }} / {{ book.copies }}
+              </span>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

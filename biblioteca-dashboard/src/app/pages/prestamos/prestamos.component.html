@@ -1,0 +1,27 @@
+<section class="page">
+  <h2 class="page__title">Préstamos</h2>
+  <div class="card card--table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Libro</th>
+          <th>Socio</th>
+          <th>Fecha de préstamo</th>
+          <th>Vence</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (loan of loans; track loan.id) {
+          <tr>
+            <td><strong>{{ loan.bookTitle }}</strong></td>
+            <td>{{ loan.member }}</td>
+            <td>{{ loan.loanDate }}</td>
+            <td>{{ loan.dueDate }}</td>
+            <td><span class="badge" [class]="badgeClass(loan.status)">{{ loan.status }}</span></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

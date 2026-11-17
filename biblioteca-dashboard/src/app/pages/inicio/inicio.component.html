@@ -1,0 +1,30 @@
+<section class="page">
+  <div class="welcome">
+    <h2>¡Bienvenido a BiblioTeca!</h2>
+    <p>Gestiona libros, autores, categorías y préstamos desde un solo lugar.</p>
+  </div>
+
+  <div class="grid grid--kpi">
+    <app-kpi-card label="Libros registrados" [value]="totalBooks" icon="📚" />
+    <app-kpi-card label="Autores" [value]="totalAuthors" icon="✍️" />
+    <app-kpi-card label="Categorías" [value]="totalCategories" icon="🗂️" />
+    <app-kpi-card label="Ejemplares disponibles" [value]="availableCopies" icon="✅" />
+    <app-kpi-card label="Préstamos activos" [value]="activeLoans" icon="🔖" />
+    <app-kpi-card label="Préstamos vencidos" [value]="overdueLoans" icon="⚠️" />
+  </div>
+
+  <div class="card">
+    <div class="card__head">
+      <h3>Últimos libros agregados</h3>
+      <a routerLink="/libros">Ver todos →</a>
+    </div>
+    <ul class="list">
+      @for (book of recentBooks; track book.id) {
+        <li>
+          <strong>{{ book.title }}</strong>
+          <span class="muted">{{ book.authorName }} · {{ book.year }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

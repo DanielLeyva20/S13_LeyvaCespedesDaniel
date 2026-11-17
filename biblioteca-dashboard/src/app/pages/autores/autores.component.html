@@ -1,0 +1,12 @@
+<section class="page">
+  <h2 class="page__title">Autores</h2>
+  <div class="grid grid--cards">
+    @for (author of authors; track author.id) {
+      <article class="card">
+        <h3>{{ author.name }}</h3>
+        <p class="muted">{{ author.country }} · n. {{ author.birthYear }}</p>
+        <span class="badge badge--ok">{{ author.bookCount }} libro(s)</span>
+      </article>
+    }
+  </div>
+</section>

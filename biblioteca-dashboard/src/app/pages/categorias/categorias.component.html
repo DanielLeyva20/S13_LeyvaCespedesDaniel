@@ -1,0 +1,12 @@
+<section class="page">
+  <h2 class="page__title">Categorías</h2>
+  <div class="grid grid--cards">
+    @for (category of categories; track category.id) {
+      <article class="card">
+        <h3>{{ category.name }}</h3>
+        <p class="muted">{{ category.description }}</p>
+        <span class="badge badge--ok">{{ category.bookCount }} libro(s)</span>
+      </article>
+    }
+  </div>
+</section>
