@@ -13,6 +13,31 @@
   font-size: 1.3rem;
 }
 
+.header__user {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header__name {
+  font-weight: 600;
+}
+
+.header__logout {
+  padding: 0.45rem 0.9rem;
+  color: #991b1b;
+  background: #fee2e2;
+  border: 0;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__logout:hover {
+  background: #fecaca;
+}
+
 .header__date {
   color: var(--color-muted);
   font-size: 0.9rem;

@@ -1,4 +1,8 @@
 <header class="header">
   <h1 class="header__title">Dashboard de Biblioteca</h1>
-  <span class="header__date">{{ today }}</span>
+  <div class="header__user">
+    <span class="header__date">{{ today }}</span>
+    <span class="header__name">👤 {{ userName }}</span>
+    <button class="header__logout" type="button" (click)="logout()">Cerrar sesión</button>
+  </div>
 </header>
